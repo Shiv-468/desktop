@@ -303,6 +303,11 @@ li {
 .position-fixed{
     position: fixed;
 }
+.nav-bnt{
+    width: 111px;
+height: 40px;
+flex-shrink: 0;
+}
 .nav-box{
     height: 53px;
     width: 100%;
@@ -375,7 +380,12 @@ li {
 .mt-116px{
     margin-top: 116px;
 }
-
+.gap_30{
+    gap: 30px;
+}
+.mt-40px{
+    padding-top: 40px;
+}
 .last-line {
     color: rgba(43, 53, 62, 0.70);
     font-family: Roboto;
@@ -656,51 +666,43 @@ li {
         font-size: 18px;
     }
 }
-
 @media (max-width:768px) {
-    nav ul {
-        position: fixed;
-        top: 80px;
-        z-index: 1;
+    label[for="menu-box"]>span {
+        width: 100%;
+        background-color: gray;
+        height: 5px;
+        border-radius: 2px;
+    }
+
+    label[for="menu-box"] {
+        width: 30px;
+        height: 30px;
         display: flex;
-        align-items: center;
         flex-direction: column;
-        left: -100%;
-        background-color: #1E71FF;
+        justify-content: space-between;
+        position: relative;
+        z-index: 3;
+    }
+.gap_30{
+    gap: 60px;
+}
+    #menu-box:checked~ul.mobile_view {
+        right: 0;
+    }
+
+    ul.mobile_view {
+        background-color: black;
         width: 100%;
         height: 100%;
-        transition: all 400ms linear;
-    }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
 
-    .nav-btn {
-        margin-top: 60px;
-        margin-left: 80px;
-    }
-
-    nav ul li {
-        margin-top: 60px;
-    }
-
-    .icon {
-        height: 50px;
-        width: 50px;
-        background-color: #1E71FF;
-        position: absolute;
-        right: 15px;
-    }
-    nav {
-        width: 100%;
-        height: 80px;
-        position: relative;
-    }
-    .icon-line {
-        width: 40px;
-        height: 3px;
-        background-color: gray;
-        display: inline-block;
-    }
-
-    #menubox:checked~ul {
-        left: 0;
+        right: -100%;
+        top: 0;
+        z-index: 2;
+        transition: all 500ms linear;
     }
 }
